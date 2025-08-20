@@ -1,0 +1,26 @@
+[
+  {
+    "id": "occ_296177",
+    "sci": "Crotalus_estebanensis",
+    "ts": null,
+    "lat": 28.69995,
+    "lon": -112.57584,
+    "source": "NA",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  },
+  {
+    "id": "occ_296178",
+    "sci": "Crotalus_estebanensis",
+    "ts": null,
+    "lat": 28.72,
+    "lon": -112.57,
+    "source": "NA",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  }
+]
