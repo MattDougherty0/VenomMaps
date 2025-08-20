@@ -48,12 +48,18 @@ export function labelOf(sci) {
   return `${cleanCommon(e.common, sci)} (${sciPretty(sci)})`;
 }
 
-// Deterministic color per species (HSL string)
+// Distinct qualitative palette for species colors (Tableau/D3-inspired)
+const DISTINCT_PALETTE = [
+  '#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf',
+  '#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#a65628','#f781bf','#999999','#66c2a5','#fc8d62',
+  '#8da0cb','#e78ac3','#a6d854','#ffd92f'
+];
+
+// Deterministic color per species mapped to above palette
 export function colorFor(sci) {
   let hash = 0;
   for (let i = 0; i < sci.length; i++) hash = (hash * 31 + sci.charCodeAt(i)) >>> 0;
-  const hue = hash % 360;
-  return `hsl(${hue} 70% 50%)`;
+  return DISTINCT_PALETTE[hash % DISTINCT_PALETTE.length];
 }
 
 // ---- Selection state --------------------------------------------------------
