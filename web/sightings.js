@@ -3,12 +3,12 @@ import { sciPretty, getSelection, onSelectionChange, labelOf } from './main.js';
 let mapRef;
 let layerGroup = null;   // Leaflet LayerGroup for all sightings
 const speciesData = new Map(); // sci -> array of sightings
-let visible = true;      // toggle
+let visible = false;     // toggle (default off)
 let recencyDays = null;  // null => All by default
 
 export function initSightings(map) {
   mapRef = map;
-  layerGroup = L.layerGroup().addTo(mapRef);
+  layerGroup = L.layerGroup(); // attach only when visible
   // Refresh on selection and map moves
   onSelectionChange(handleSelectionChange);
   mapRef.on('moveend zoomend', () => render());
@@ -16,7 +16,12 @@ export function initSightings(map) {
 
 export function setSightingsVisible(v) {
   visible = v;
-  if (!visible) { layerGroup.clearLayers(); return; }
+  if (!visible) {
+    layerGroup.clearLayers();
+    if (mapRef && mapRef.hasLayer(layerGroup)) mapRef.removeLayer(layerGroup);
+    return;
+  }
+  if (mapRef && !mapRef.hasLayer(layerGroup)) layerGroup.addTo(mapRef);
   render();
 }
 
