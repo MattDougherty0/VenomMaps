@@ -51,9 +51,9 @@ export async function setSelection(selection) {
       const layer = L.geoJSON(geo, {
         style: {
           color: colorFor(sci),
-          weight: 1,
+          weight: 2,
           fillColor: colorFor(sci),
-          fillOpacity: 0.28
+          fillOpacity: 0.10
         },
         onEachFeature: (_, layer) => layer.bindTooltip(labelOf(sci), { sticky: true })
       }).addTo(map);
