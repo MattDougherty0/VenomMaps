@@ -77,6 +77,14 @@ export function clearSelection() {
   emit();
 }
 
+export function selectAllSpecies() {
+  // Select all species currently loaded in COMMON
+  for (const e of COMMON) selected.add(e.sci);
+  renderSelectedPanel();
+  highlightSelectedInLists();
+  emit();
+}
+
 // ---- Fuzzy search (#2) ------------------------------------------------------
 let fuse;
 

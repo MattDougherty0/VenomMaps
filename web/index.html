@@ -71,7 +71,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script type="module">
-      import { attachSearch, loadCommon, attachNearby, attachSelectedPanel, onSelectionChange } from './main.js';
+      import { attachSearch, loadCommon, attachNearby, attachSelectedPanel, onSelectionChange, selectAllSpecies } from './main.js';
       import { initMap, setSelection, onMapMove, getViewBounds, getMap, setDeferRanges } from './map.js';
       import { initSightings, setSightingsVisible, setRecencyDays } from './sightings.js';
 
@@ -85,6 +85,9 @@
       attachNearby({ onMove: onMapMove, getBounds: getViewBounds });
       attachSelectedPanel();
       onSelectionChange(setSelection);
+
+      // Select all species by default so ranges are colored and legend populates
+      selectAllSpecies();
 
       // Sightings UI controls
       const toggle = document.getElementById('sightings-toggle');
