@@ -6,32 +6,8 @@
     "venom_risk": "high"
   },
   {
-    "sci": "Crotalus_enyo",
-    "common": "Baja California Rattlesnake [enyo], Rosario Rattlesnake [furvus], Cerralvo Rattlesnake [cerralvensis]; German: Baja-Klapperschlange",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
     "sci": "Crotalus_molossus",
     "common": "Black Tailed Rattlesnake, Northern Black Tailed Rattlesnake, nigrescens: Mexican black-tailed Rattlesnake, oaxacus: Oaxacan Black-tailed Rattlesnake); German: Schwarzschwanz-Klapperschlange",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Agkistrodon_laticinctus",
-    "common": "Broad-banded Copperhead [contortrix], Trans-Pecos Copperhead [pictigaster]; German: Breitband-Kupferkopf",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Agkistrodon_bilineatus",
-    "common": "Cantil, Mexican Moccasin; German: Mexikanische Mokassinschlange",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_catalinensis",
-    "common": "Catalina Island Rattlesnake; German: Santa-Catalina-Klapperschlange",
     "aliases": [],
     "venom_risk": "high"
   },
@@ -48,26 +24,8 @@
     "venom_risk": "high"
   },
   {
-    "sci": "Agkistrodon_conanti",
-    "common": "Florida Cottonmouth; German: Florida-Wassermokassinotter",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
     "sci": "Crotalus_lutosus",
     "common": "Great Basin Rattlesnake; German: Great-Basin-Klapperschlange, abyssus: Grand Canyon Rattlesnake",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_polisi",
-    "common": "Horsehead Island speckled rattlesnake",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_angelensis",
-    "common": "Isla Angel Rattlesnake; German: Angel-Klapperschlange",
     "aliases": [],
     "venom_risk": "high"
   },
@@ -78,26 +36,8 @@
     "venom_risk": "high"
   },
   {
-    "sci": "Crotalus_thalassoporus",
-    "common": "Louse Island speckled rattlesnake",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
     "sci": "Sistrurus_catenatus",
     "common": "Massasauga, catenatus: Eastern Massasauga; German: Massasauga, Ketten-Klapperschlange; German: W√ºsten-Massasauga [edwardsi]",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Agkistrodon_taylori",
-    "common": "Mexican Moccasin",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_basiliscus",
-    "common": "Mexican West-Coast Rattlesnake, Basilisk Rattlesnake; German: Basilisken-Klapperschlange",
     "aliases": [],
     "venom_risk": "high"
   },
@@ -120,12 +60,6 @@
     "venom_risk": "high"
   },
   {
-    "sci": "Crotalus_ornatus",
-    "common": "Ornate Black- tailed Rattlesnake, Black-tailed Rattlesnake",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
     "sci": "Crotalus_stephensi",
     "common": "Panamint Rattlesnake; German: Panamint-Klapperschlange",
     "aliases": [],
@@ -144,20 +78,8 @@
     "venom_risk": "high"
   },
   {
-    "sci": "Crotalus_lorenzoensis",
-    "common": "Red Diamond Rattlesnake (exsul: Cedros Island Rattlesnake, lorenzoensis: San Lorenzo Island Rattlesnake, lucasensis: San Lucan Rattlesnake, ruber: Red Diamond Rattlesnake, monserratensis: Red Rattlesnake); German: Rote Diamant-Klapperschlange",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
     "sci": "Crotalus_ruber",
     "common": "Red Diamond Rattlesnake (exsul: Cedros Island Rattlesnake, lucasensis: San Lucan Rattlesnake, ruber: Red Diamond Rattlesnake, monserratensis: Red Rattlesnake); German: Rote Diamant-Klapperschlange",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_estebanensis",
-    "common": "San Esteban Island Rattlesnake; German: San Esteban-Klapperschlange",
     "aliases": [],
     "venom_risk": "high"
   },
@@ -170,12 +92,6 @@
   {
     "sci": "Crotalus_cerastes",
     "common": "Sidewinder, Mojave desert sidewinder [cerastes], Sonoran desert sidewinder [cercobombus], Colorado desert sidewinder[laterorepens]; German: Seitenwinder, Geh√∂rnte Klapperschlange",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_stejnegeri",
-    "common": "Sinaloan Long-tailed Rattlesnake; Spanish: Cascabel Cola-larga de Sinaloa",
     "aliases": [],
     "venom_risk": "high"
   },
@@ -204,12 +120,6 @@
     "venom_risk": "high"
   },
   {
-    "sci": "Crotalus_morulus",
-    "common": "Tamaulipan Rock Rattlesnake",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
     "sci": "Crotalus_tigris",
     "common": "Tiger Rattlesnake; German: Tiger-Klapperschlange",
     "aliases": [],
@@ -218,12 +128,6 @@
   {
     "sci": "Crotalus_horridus",
     "common": "Timber rattlesnake, cane-brake rattlesnake (atricaudatus); German: Wald-Klapperschlange (atricaudatus)",
-    "aliases": [],
-    "venom_risk": "high"
-  },
-  {
-    "sci": "Crotalus_totonacus",
-    "common": "Totonacan Rattlesnake",
     "aliases": [],
     "venom_risk": "high"
   },
