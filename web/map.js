@@ -8,6 +8,7 @@ let overlapLayer = null;       // Leaflet layer for intersection
 let allRangesGroup = null;     // Group for all ranges when nothing selected
 let deferRanges = true;        // Defer drawing ranges while panning
 let hasSelection = false;      // Track whether species are selected
+let rangeRenderer;             // Shared canvas renderer for range polygons
 
 export async function initMap() {
   // Prefer canvas for better performance with many vectors
@@ -15,6 +16,7 @@ export async function initMap() {
           .setView([39.5, -98.35], 4); // USA
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
               { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+  rangeRenderer = L.canvas({ padding: 0.5 });
   allRangesGroup = L.layerGroup().addTo(map);
   // Hide ranges during move for responsiveness when deferring is enabled
   map.on('movestart', () => { if (deferRanges && !hasSelection) clearAllRanges(); });
@@ -55,9 +57,12 @@ export async function setSelection(selection) {
           color: colorFor(sci),
           weight: 2,
           fillColor: colorFor(sci),
-          fillOpacity: 0.10
+          fillOpacity: 0.10,
+          smoothFactor: 1
         },
-        onEachFeature: (_, layer) => layer.bindTooltip(labelOf(sci), { sticky: true })
+        onEachFeature: (_, layer) => layer.bindTooltip(labelOf(sci), { sticky: true }),
+        renderer: rangeRenderer,
+        interactive: false
       }).addTo(map);
       layers.set(sci, layer);
     }
@@ -92,8 +97,11 @@ async function renderAllRanges(){
           color: '#64748b',
           weight: 0.8,
           fillColor: '#94a3b8',
-          fillOpacity: 0.08
-        }
+          fillOpacity: 0.08,
+          smoothFactor: 1
+        },
+        renderer: rangeRenderer,
+        interactive: false
       }).addTo(allRangesGroup);
     }
     if (allRangesGroup && map.hasLayer(allRangesGroup)) allRangesGroup.bringToBack();
