@@ -1,0 +1,20 @@
+{
+  "total_records": 362220,
+  "usa_records": 228383,
+  "dated_any": 20467,
+  "dated_full": 20467,
+  "post_2010": 8035,
+  "basis_counts": {
+    "HumanObservation": 36778,
+    "Observation": 50594,
+    "MachineObservation": 306,
+    "PreservedSpecimen": 98491,
+    "FossilSpecimen": 0,
+    "Other": 42214
+  },
+  "captive_flagged": 251,
+  "valid_coords": 206812,
+  "uncertainty_le_2km": 69682,
+  "gbif_issue_flagged": 4795,
+  "has_media": 0
+}
