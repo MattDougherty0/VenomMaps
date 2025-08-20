@@ -50,6 +50,11 @@
           <button id="clear-selected" class="clear-btn" title="Clear all">Clear</button>
         </div>
         <ul id="selected" class="results selected-list"></ul>
+
+        <div class="section-title" style="margin-top:16px;">Performance</div>
+        <label style="display:flex; align-items:center; gap:8px;">
+          <input id="defer-ranges" type="checkbox" checked> Defer ranges while panning
+        </label>
       </aside>
 
       <main id="map"></main>
@@ -62,9 +67,12 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script type="module">
       import { attachSearch, loadCommon, attachNearby, attachSelectedPanel, onSelectionChange } from './main.js';
-      import { initMap, setSelection, onMapMove, getViewBounds, getMap } from './map.js';
+      import { initMap, setSelection, onMapMove, getViewBounds, getMap, setDeferRanges } from './map.js';
       import { initSightings, setSightingsVisible, setRecencyDays } from './sightings.js';
 
       await loadCommon();
@@ -88,6 +96,9 @@
           setRecencyDays(v === 'all' ? null : parseInt(v, 10));
         });
       }
+
+      const defer = document.getElementById('defer-ranges');
+      defer.addEventListener('change', () => setDeferRanges(defer.checked));
     </script>
   </body>
   </html>
