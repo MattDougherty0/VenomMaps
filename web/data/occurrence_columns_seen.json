@@ -1,0 +1,21 @@
+[
+  "ID",
+  "database_recorded_species",
+  "database_recorded_subspecies",
+  "taxonomy_updated_species",
+  "taxonomy_updated_subspecies2",
+  "final_species",
+  "final_subspecies",
+  "latitude",
+  "longitude",
+  "accuracy_m",
+  "country",
+  "locality",
+  "source",
+  "voucher",
+  "issue",
+  "geoDist",
+  "phyDist",
+  "flag",
+  "flag_detailed"
+]

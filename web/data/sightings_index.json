@@ -1,0 +1,242 @@
+[
+  {
+    "sci": "Agkistrodon_piscivorus",
+    "count": 6772,
+    "bytes": 1780148,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_horridus",
+    "count": 3714,
+    "bytes": 954656,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_viridis",
+    "count": 2358,
+    "bytes": 603830,
+    "latest_ts": null
+  },
+  {
+    "sci": "Sistrurus_miliarius",
+    "count": 1642,
+    "bytes": 422234,
+    "latest_ts": null
+  },
+  {
+    "sci": "Sistrurus_catenatus",
+    "count": 685,
+    "bytes": 174950,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_scutulatus",
+    "count": 2777,
+    "bytes": 700816,
+    "latest_ts": null
+  },
+  {
+    "sci": "Agkistrodon_contortrix",
+    "count": 7500,
+    "bytes": 1952418,
+    "latest_ts": null
+  },
+  {
+    "sci": "Sistrurus_tergeminus",
+    "count": 760,
+    "bytes": 193710,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_atrox",
+    "count": 9631,
+    "bytes": 2432856,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_cerastes",
+    "count": 2920,
+    "bytes": 727975,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_helleri",
+    "count": 4343,
+    "bytes": 1116789,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_pyrrhus",
+    "count": 1212,
+    "bytes": 315255,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_ruber",
+    "count": 1967,
+    "bytes": 495741,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_adamanteus",
+    "count": 1478,
+    "bytes": 379142,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_ornatus",
+    "count": 892,
+    "bytes": 227351,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_oreganus",
+    "count": 3912,
+    "bytes": 1008824,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_lepidus",
+    "count": 1050,
+    "bytes": 266082,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_molossus",
+    "count": 1380,
+    "bytes": 351146,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_tigris",
+    "count": 407,
+    "bytes": 103044,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_lutosus",
+    "count": 1612,
+    "bytes": 416503,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_stephensi",
+    "count": 237,
+    "bytes": 62283,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_cerberus",
+    "count": 210,
+    "bytes": 54037,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_willardi",
+    "count": 197,
+    "bytes": 49356,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_concolor",
+    "count": 145,
+    "bytes": 37349,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_pricei",
+    "count": 249,
+    "bytes": 62388,
+    "latest_ts": null
+  },
+  {
+    "sci": "Agkistrodon_conanti",
+    "count": 1012,
+    "bytes": 264902,
+    "latest_ts": null
+  },
+  {
+    "sci": "Agkistrodon_laticinctus",
+    "count": 639,
+    "bytes": 168239,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_enyo",
+    "count": 155,
+    "bytes": 36881,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_polisi",
+    "count": 2,
+    "bytes": 481,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_mitchellii",
+    "count": 17,
+    "bytes": 4203,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_thalassoporus",
+    "count": 1,
+    "bytes": 252,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_catalinensis",
+    "count": 33,
+    "bytes": 8734,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_morulus",
+    "count": 50,
+    "bytes": 12306,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_basiliscus",
+    "count": 116,
+    "bytes": 28520,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_totonacus",
+    "count": 18,
+    "bytes": 4667,
+    "latest_ts": null
+  },
+  {
+    "sci": "Agkistrodon_bilineatus",
+    "count": 14,
+    "bytes": 3640,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_lorenzoensis",
+    "count": 3,
+    "bytes": 757,
+    "latest_ts": null
+  },
+  {
+    "sci": "Agkistrodon_taylori",
+    "count": 8,
+    "bytes": 2290,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_angelensis",
+    "count": 9,
+    "bytes": 2285,
+    "latest_ts": null
+  },
+  {
+    "sci": "Crotalus_estebanensis",
+    "count": 2,
+    "bytes": 482,
+    "latest_ts": null
+  }
+]

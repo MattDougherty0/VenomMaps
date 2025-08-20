@@ -1,0 +1,98 @@
+[
+  {
+    "id": "occ_192189",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 25.27857,
+    "lon": -100.09833,
+    "source": "HUMAN_OBSERVATION",
+    "photo": false,
+    "verified": true,
+    "source_kind": "human_observation",
+    "highlight": false
+  },
+  {
+    "id": "occ_223527",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 25.37588,
+    "lon": -99.84487,
+    "source": "HUMAN_OBSERVATION",
+    "photo": false,
+    "verified": true,
+    "source_kind": "human_observation",
+    "highlight": false
+  },
+  {
+    "id": "occ_223528",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 25.289,
+    "lon": -99.88398,
+    "source": "HUMAN_OBSERVATION",
+    "photo": false,
+    "verified": true,
+    "source_kind": "human_observation",
+    "highlight": false
+  },
+  {
+    "id": "occ_247315",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 25.46249,
+    "lon": -100.18132,
+    "source": "HUMAN_OBSERVATION",
+    "photo": false,
+    "verified": true,
+    "source_kind": "human_observation",
+    "highlight": false
+  },
+  {
+    "id": "occ_247513",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 25.35182,
+    "lon": -100.01136,
+    "source": "HUMAN_OBSERVATION",
+    "photo": false,
+    "verified": true,
+    "source_kind": "human_observation",
+    "highlight": false
+  },
+  {
+    "id": "occ_282538",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 24.75833,
+    "lon": -99.54167,
+    "source": "NA",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  },
+  {
+    "id": "occ_340626",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 25.67776,
+    "lon": -100.30938,
+    "source": "Burchfield, P. M. 1982. Additions to the Natural history of the Crotaline snake Agkistrodon bilineatus taylori. Journal ",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  },
+  {
+    "id": "occ_340627",
+    "sci": "Agkistrodon_taylori",
+    "ts": null,
+    "lat": 24.85972,
+    "lon": -99.56667,
+    "source": "Burchfield, P. M. 1982. Additions to the Natural history of the Crotaline snake Agkistrodon bilineatus taylori. Journal ",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  }
+]

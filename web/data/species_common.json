@@ -1,0 +1,152 @@
+[
+  {
+    "sci": "Crotalus_cerberus",
+    "common": "Arizona Black Rattlesnake; German: Schwarze Arizona-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_molossus",
+    "common": "Black Tailed Rattlesnake, Northern Black Tailed Rattlesnake, nigrescens: Mexican black-tailed Rattlesnake, oaxacus: Oaxacan Black-tailed Rattlesnake); German: Schwarzschwanz-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Sistrurus_tergeminus",
+    "common": "Desert Massasauga [edwardsi], Western Massasauga, Prairie Massasauga [tergeminus]; German: W√ºsten-Massasauga [edwardsi]; German: Prairie-Massasauga [tergeminus]",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_adamanteus",
+    "common": "Eastern Diamondback Rattlesnake; German: Diamant-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_lutosus",
+    "common": "Great Basin Rattlesnake; German: Great-Basin-Klapperschlange, abyssus: Grand Canyon Rattlesnake",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_lepidus",
+    "common": "lepidus: Rock Rattlesnake, klauberi: Banded Rock Rattlesnake, maculosus: Durangan Rock Rattlesnake; German: Felsen-Klapperschlange, Gebirgsklapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Sistrurus_catenatus",
+    "common": "Massasauga, catenatus: Eastern Massasauga; German: Massasauga, Ketten-Klapperschlange; German: W√ºsten-Massasauga [edwardsi]",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_concolor",
+    "common": "Midget Faded Rattlesnake",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Agkistrodon_piscivorus",
+    "common": "Northern Cottonmouth [piscivorus], Western Cottonmouth [leucostoma]; German: Wasser-Mokassinotter; German: √ñstliche Wasser-Mokassinotter [piscivorus]; German: Westliche Wassermokassinotter [leucostoma]",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_oreganus",
+    "common": "Northern Pacific Rattlesnake; German: Oregon-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_stephensi",
+    "common": "Panamint Rattlesnake; German: Panamint-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Sistrurus_miliarius",
+    "common": "Pigmy Rattlesnake, barbouri: Dusky Pigmy Rattlesnake, miliarius: Carolina Pigmy Rattlesnake, streckeri: Western Pigmy Rattlesnake; German: Zwergklapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_pricei",
+    "common": "pricei: Western Twin Spotted Rattlesnake, Arizona Twin Spotted Rattlesnake; German: Prices Klapperschlange, miquihuanus: Eastern Twin Spotted Rattlesnake",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_ruber",
+    "common": "Red Diamond Rattlesnake (exsul: Cedros Island Rattlesnake, lucasensis: San Lucan Rattlesnake, ruber: Red Diamond Rattlesnake, monserratensis: Red Rattlesnake); German: Rote Diamant-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_scutulatus",
+    "common": "scutulatus: Mojave (Green) Rattlesnake, salvini: Huamantlan Rattlesnake; German: Mojave-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_cerastes",
+    "common": "Sidewinder, Mojave desert sidewinder [cerastes], Sonoran desert sidewinder [cercobombus], Colorado desert sidewinder[laterorepens]; German: Seitenwinder, Geh√∂rnte Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Agkistrodon_contortrix",
+    "common": "Southern Copperhead [contortrix], Northern Copperhead [mokasen], Osage Copperhead [phaeogaster]; German: Kupferkopf",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_helleri",
+    "common": "Southern Pacific Rattlesnake",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_pyrrhus",
+    "common": "Southwestern Speckled Rattlesnake; German: S√ºdwestliche Gefleckte Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_mitchellii",
+    "common": "Speckled Rattlesnake; German: Gefleckte Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_tigris",
+    "common": "Tiger Rattlesnake; German: Tiger-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_horridus",
+    "common": "Timber rattlesnake, cane-brake rattlesnake (atricaudatus); German: Wald-Klapperschlange (atricaudatus)",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_viridis",
+    "common": "viridis: Western Rattlesnake, Prairie Rattlesnake, nuntius: Hopi Rattlesnake; German: Pr√§rie-Klapperschlange; German: nuntius: Hopi-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_atrox",
+    "common": "Western Diamond-backed Rattlesnake; German: Texas-Klapperschlange, Westliche Diamantklapperschlange, Tortuga Island Rattlesnake (tortugensis)",
+    "aliases": [],
+    "venom_risk": "high"
+  },
+  {
+    "sci": "Crotalus_willardi",
+    "common": "willardi: Arizona Ridgenose Rattlesnake, obscurus: New Mexico Ridgenose Rattlesnake, amabilis: Del Nido Ridge-nosed Rattlesnake, meridionalis: Southern Ridge-nosed Rattlesnake, silus: Western Chihuahuan Ridge-nosed Rattlesnake); German: Willards Klapperschlange, Kantenkopf-Klapperschlange",
+    "aliases": [],
+    "venom_risk": "high"
+  }
+]

@@ -1,0 +1,582 @@
+> pkgs <- c("shiny","leaflet","leaflet.extras","leaflet.extras2","RColorBrewer","sf","raster","tidyr","dplyr","readr","ggpubr","ggtext","patchwork","sp","shinybusy","readxl"); inst <- pkgs[!pkgs %in% rownames(installed.packages())]; if(length(inst)) install.packages(inst, repos="https://cloud.r-project.org", dependencies=TRUE); cat("Installed:", paste(inst, collapse=", "), "
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c exec.c -o exec.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o sys.so exec.o init.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c RcppExports.cpp -o RcppExports.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c bbox.cpp -o bbox.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c close.cpp -o close.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c columns.cpp -o columns.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c coordinates.cpp -o coordinates.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c geometries.cpp -o geometries.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c lines.cpp -o lines.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c lists.cpp -o lists.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c nest.cpp -o nest.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c shapes.cpp -o shapes.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c tests.cpp -o tests.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -I../inst/include/ -fPIC  -g -O2   -c utils.cpp -o utils.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o geometries.so RcppExports.o bbox.o close.o columns.o coordinates.o geometries.o lines.o lists.o nest.o shapes.o tests.o utils.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether clang++ -std=gnu++17 accepts -g... yes
+checking for clang++ -std=gnu++17 option to enable C++11 features... none needed
+checking how to run the C++ preprocessor... clang++ -std=gnu++17 -E
+checking whether the compiler supports GNU C++... (cached) yes
+checking whether clang++ -std=gnu++17 accepts -g... (cached) yes
+checking for clang++ -std=gnu++17 option to enable C++11 features... (cached) none needed
+checking for pkg-config... no
+checking for cmake... no
+
+------------------ CMAKE NOT FOUND --------------------
+
+CMake was not found on the PATH. Please install CMake:
+
+ - sudo yum install cmake          (Fedora/CentOS; inside a terminal)
+ - sudo apt install cmake          (Debian/Ubuntu; inside a terminal).
+ - sudo pacman -S cmake            (Arch Linux; inside a terminal).
+ - brew install --cask cmake       (MacOS; inside a terminal with Homebrew)
+ - sudo port install cmake         (MacOS; inside a terminal with MacPorts)
+
+Alternatively install CMake from: <https://cmake.org/>
+
+-------------------------------------------------------
+
+checking for gcc... clang -std=gnu2x
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether clang -std=gnu2x accepts -g... yes
+checking for clang -std=gnu2x option to enable C11 features... -std=gnu11
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for grp.h... yes
+checking for langinfo.h... yes
+checking for locale.h... yes
+checking for netinet/in.h... yes
+checking for stdlib.h... (cached) yes
+checking for sys/file.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/socket.h... yes
+checking for sys/sockio.h... yes
+checking for sys/syscall.h... yes
+checking for sys/sendfile.h... no
+checking for sys/time.h... yes
+checking for sys/un.h... yes
+checking for unistd.h... (cached) yes
+checking for net/if.h... yes
+checking for net/if_dl.h... yes
+checking for dirfd... yes
+checking for err... yes
+checking for errx... yes
+checking for getexecname... no
+checking for getrandom... no
+checking for jrand48... yes
+checking for llseek... no
+checking for lchown... yes
+checking for mempcpy... no
+checking for mkostemp... yes
+checking for nanosleep... yes
+checking for sendfile... yes
+checking for srandom... yes
+checking for strnchr... no
+checking for strndup... yes
+checking for strnlen... yes
+checking for usleep... yes
+checking for warn... yes
+checking for warnx... yes
+checking for flock... yes
+checking for struct sockaddr.sa_len... yes
+checking for dlfcn.h... yes
+checking for library containing dlsym... none required
+checking for thread local storage (TLS) support... yes
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating src/config.h
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c R.c -o R.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c Ruuid.c -o Ruuid.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c clear.c -o clear.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c compare.c -o compare.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c copy.c -o copy.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c gen_uuid.c -o gen_uuid.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c isnull.c -o isnull.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c md5.c -o md5.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c pack.c -o pack.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c parse.c -o parse.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c rand.c -o rand.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c randutils.c -o randutils.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c sha1.c -o sha1.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c unpack.c -o unpack.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -include config.h -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c unparse.c -o unparse.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o uuid.so R.o Ruuid.o clear.o compare.o copy.o gen_uuid.o isnull.o md5.o pack.o parse.o rand.o randutils.o sha1.o unpack.o unparse.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c RcppExports.cpp -o RcppExports.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c loop_apply.c -o loop_apply.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c split-numeric.cpp -o split-numeric.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o plyr.so RcppExports.o loop_apply.o split-numeric.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c common.cpp -o common.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cpp11.cpp -o cpp11.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c get.cpp -o get.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c parse.c -o parse.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c round.cpp -o round.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c tzone.cpp -o tzone.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c update.cpp -o update.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_fixed.cc -o cctz/src/time_zone_fixed.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_if.cc -o cctz/src/time_zone_if.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_impl.cc -o cctz/src/time_zone_impl.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_info.cc -o cctz/src/time_zone_info.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_libc.cc -o cctz/src/time_zone_libc.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_lookup.cc -o cctz/src/time_zone_lookup.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/time_zone_posix.cc -o cctz/src/time_zone_posix.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cctz/src/zone_info_source.cc -o cctz/src/zone_info_source.o
+ar rcs libcctz.a ./cctz/src/time_zone_fixed.o ./cctz/src/time_zone_if.o ./cctz/src/time_zone_impl.o ./cctz/src/time_zone_info.o ./cctz/src/time_zone_libc.o ./cctz/src/time_zone_lookup.o ./cctz/src/time_zone_posix.o ./cctz/src/zone_info_source.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o timechange.so common.o cpp11.o get.o parse.o round.o tzone.o update.o -L. -lcctz -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c ADinf.c -o ADinf.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c AnDarl.c -o AnDarl.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o goftest.so ADinf.o AnDarl.o init.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c R_register_native.c -o R_register_native.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c Rstringdist.c -o Rstringdist.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c dl.c -o dl.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c hamming.c -o hamming.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c jaro.c -o jaro.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c lcs.c -o lcs.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c lv.c -o lv.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c osa.c -o osa.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c qgram.c -o qgram.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c soundex.c -o soundex.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c stringdist.c -o stringdist.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c utf8ToInt.c -o utf8ToInt.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c utils.c -o utils.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o stringdist.so R_register_native.o Rstringdist.o dl.o hamming.o jaro.o lcs.o lv.o osa.o qgram.o soundex.o stringdist.o utf8ToInt.o utils.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c colorspace.c -o colorspace.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o colorspace.so colorspace.o init.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+checking for gcc... clang -std=gnu2x
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether clang -std=gnu2x accepts -g... yes
+checking for clang -std=gnu2x option to enable C11 features... none needed
+checking how to run the C preprocessor... clang -std=gnu2x -E
+checking for sed... /usr/bin/sed
+checking for pkg-config... no
+checking for xml2-config... /usr/bin/xml2-config
+USE_XML2 = yes
+SED_EXTENDED_ARG: -E
+Minor 9, Patch 13 for 2.9.13
+Located parser file -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/parser.h
+Checking for 1.8:  -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+Using libxml2.*
+checking for gzopen in -lz... yes
+checking for xmlParseFile in -lxml2... yes
+checking for xmlHashSize in -lxml2... yes
+Using built-in xmlHashSize
+Checking DTD parsing (presence of externalSubset)...
+checking for xmlHashSize in -lxml2... (cached) yes
+Found xmlHashSize
+checking for xmlOutputBufferCreateBuffer in -lxml2... yes
+have xmlOutputBufferCreateBuffer()
+checking for xmlDocDumpFormatMemoryEnc in -lxml2... yes
+checking for libxml/xmlversion.h... yes
+Expat:  FALSE
+Checking for return type of xmlHashScan element routine.
+No return value for xmlHashScan
+xmlNs has a context field
+Checking for cetype_t enumeration
+Using recent version of R with cetype_t enumeration type for encoding
+checking for xmlsec1-config... no
+nodegc default 
+xml-debug default 
+Version has XML_WITH_ZLIB
+Version has xmlHasFeature()
+
+****************************************
+Configuration information:
+
+Libxml settings
+
+libxml include directory: -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+libxml library directory: -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lxml2 -lz -lpthread -licucore -lm -lz  -lxml2
+libxml 2:                 -DLIBXML2=1
+
+Compilation flags:         -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1 
+Link flags:               -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lxml2 -lz -lpthread -licucore -lm -lz  -lxml2
+
+****************************************
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating R/supports.R
+config.status: creating inst/scripts/RSXML.csh
+config.status: creating inst/scripts/RSXML.bsh
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c DocParse.c -o DocParse.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c EventParse.c -o EventParse.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c ExpatParse.c -o ExpatParse.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c HTMLParse.c -o HTMLParse.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c NodeGC.c -o NodeGC.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c RSDTD.c -o RSDTD.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c RUtils.c -o RUtils.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c Rcatalog.c -o Rcatalog.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c Utils.c -o Utils.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c XMLEventParse.c -o XMLEventParse.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c XMLHashTree.c -o XMLHashTree.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c XMLTree.c -o XMLTree.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c fixNS.c -o fixNS.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c libxmlFeatures.c -o libxmlFeatures.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c schema.c -o schema.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c xmlsecurity.c -o xmlsecurity.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DLIBXML -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c xpath.c -o xpath.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o XML.so DocParse.o EventParse.o ExpatParse.o HTMLParse.o NodeGC.o RSDTD.o RUtils.o Rcatalog.o Utils.o XMLEventParse.o XMLHashTree.o XMLTree.o fixNS.o libxmlFeatures.o schema.o xmlsecurity.o xpath.o -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lxml2 -lz -lpthread -licucore -lm -lz -lxml2 -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+Creating a generic function for ‘source’ from package ‘base’ in package ‘XML’
+in method for ‘xmlAttrsToDataFrame’ with signature ‘"AsIs"’: no definition for class “AsIs”
+in method for ‘readKeyValueDB’ with signature ‘"AsIs"’: no definition for class “AsIs”
+in method for ‘readSolrDoc’ with signature ‘"AsIs"’: no definition for class “AsIs”
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c Endpoint.cpp -o Endpoint.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c plot_overlap.cpp -o plot_overlap.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c reduce.cpp -o reduce.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c which_nearest.cpp -o which_nearest.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o intervals.so Endpoint.o init.o plot_overlap.o reduce.o which_nearest.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -I../inst/include/ -DDOTCAL64_PRIVATE -fPIC  -g -O2  -c dotCall64.c -o dotCall64.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -I../inst/include/ -DDOTCAL64_PRIVATE -fPIC  -g -O2  -c dotCall64helpers.c -o dotCall64helpers.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -I../inst/include/ -DDOTCAL64_PRIVATE -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -I../inst/include/ -DDOTCAL64_PRIVATE -fPIC  -g -O2  -c testfunctions_c.c -o testfunctions_c.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c testfunctions_f.f -o testfunctions_f.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o dotCall64.so dotCall64.o dotCall64helpers.o init.o testfunctions_c.o testfunctions_f.o -L/usr/local/opt/gcc/lib/gcc/current/gcc/x86_64-apple-darwin23/15 -L/usr/local/opt/gcc/lib/gcc/current/gcc -L/usr/local/opt/gcc/lib/gcc/current -lemutls_w -lheapt_w -lgfortran -lquadmath -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+Found C++20 compiler: clang++
+Using autobrew bundle: v8-11.7.439.14-universal.tar.xz
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/private/var/folders/hv/bpj1_97j5gb701wxbv899r7m0000gn/T/RtmpGm4COj/R.INSTALL120923c9b4e14/V8/.deps/include -DV8_COMPRESS_POINTERS -DV8_ENABLE_SANDBOX -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c RcppExports.cpp -o RcppExports.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/private/var/folders/hv/bpj1_97j5gb701wxbv899r7m0000gn/T/RtmpGm4COj/R.INSTALL120923c9b4e14/V8/.deps/include -DV8_COMPRESS_POINTERS -DV8_ENABLE_SANDBOX -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c bindings.cpp -o bindings.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o V8.so RcppExports.o bindings.o -L/private/var/folders/hv/bpj1_97j5gb701wxbv899r7m0000gn/T/RtmpGm4COj/R.INSTALL120923c9b4e14/V8/.deps/lib ../.deps/v8_monolith -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c brio.c -o brio.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c file_line_endings.c -o file_line_endings.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c read_file.c -o read_file.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c read_file_raw.c -o read_file_raw.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c read_lines.c -o read_lines.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c write_file.c -o write_file.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c write_file_raw.c -o write_file_raw.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c write_lines.c -o write_lines.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o brio.so brio.o file_line_endings.o init.o read_file.o read_file_raw.o read_lines.o write_file.o write_file_raw.o write_lines.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+Existing 'libmbedtls' >= 2.5.0 not found
+Detecting 'cmake'...
+Required 'cmake' not found
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c 000.init.c -o 000.init.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c calc-serialized-size.c -o calc-serialized-size.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c test_tcp_port.c -o test_tcp_port.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o parallelly.so 000.init.o calc-serialized-size.o test_tcp_port.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c coredata.c -o coredata.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c lag.c -o lag.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o zoo.so coredata.o init.o lag.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+Homebrew 4.6.4
+Using PKG_CFLAGS=-I/usr/local/include -I/usr/local/include/freetype2
+Using PKG_LIBS=-lfreetype
+rm -f systemfonts.so caches.o cpp11.o dev_metrics.o font_matching.o font_local.o font_registry.o ft_cache.o string_shape.o font_metrics.o font_outlines.o font_fallback.o string_metrics.o emoji.o cache_store.o init.o mac/FontManagerMac.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c caches.cpp -o caches.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cpp11.cpp -o cpp11.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c dev_metrics.cpp -o dev_metrics.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c font_matching.cpp -o font_matching.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c font_local.cpp -o font_local.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c font_registry.cpp -o font_registry.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c ft_cache.cpp -o ft_cache.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c string_shape.cpp -o string_shape.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c font_metrics.cpp -o font_metrics.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c font_outlines.cpp -o font_outlines.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c font_fallback.cpp -o font_fallback.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c string_metrics.cpp -o string_metrics.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c emoji.cpp -o emoji.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c cache_store.cpp -o cache_store.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c init.cpp -o init.o
+clang++ -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include -I/usr/local/include/freetype2 -I'/usr/local/lib/R/4.5/site-library/cpp11/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -std=gnu++17 -fobjc-arc -fPIC   -c mac/FontManagerMac.mm -o mac/FontManagerMac.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o systemfonts.so caches.o cpp11.o dev_metrics.o font_matching.o font_local.o font_registry.o ft_cache.o string_shape.o font_metrics.o font_outlines.o font_fallback.o string_metrics.o emoji.o cache_store.o init.o mac/FontManagerMac.o -lfreetype -framework CoreText -framework Foundation -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+checking for gcc... clang -std=gnu2x
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether clang -std=gnu2x accepts -g... yes
+checking for clang -std=gnu2x option to accept ISO C89... unsupported
+checking for pkg-config... no
+checking for deflate in -lz... yes
+checking for png_init_io in -lpng... yes
+checking for freetype-config... yes
+checking whether freetype2 flags work... yes
+configure: creating ./config.status
+config.status: creating src/Makevars
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/opt/freetype/include/freetype2    -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c font_name.c -o font_name.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/opt/freetype/include/freetype2    -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c register_routines.c -o register_routines.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/opt/freetype/include/freetype2    -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c sysfonts.c -o sysfonts.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o sysfonts.so font_name.o register_routines.o sysfonts.o -L/usr/local/opt/freetype/lib -lfreetype -lpng -lz -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  acchk.f90 -o acchk.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  addpt.f90 -o addpt.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  adjchk.f90 -o adjchk.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  binsrt.f90 -o binsrt.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  circen.f90 -o circen.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  cross.f90 -o cross.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  delet.f90 -o delet.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  delet1.f90 -o delet1.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  delout.f90 -o delout.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  delseg.f90 -o delseg.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  dirout.f90 -o dirout.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  dirseg.f90 -o dirseg.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  dldins.f90 -o dldins.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  initad.f90 -o initad.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  insrt.f90 -o insrt.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  insrt1.f90 -o insrt1.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  intri.f90 -o intri.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  locn.f90 -o locn.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  master.f90 -o master.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  mnnd.f90 -o mnnd.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  pred.f90 -o pred.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  qtest.f90 -o qtest.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  qtest1.f90 -o qtest1.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  stoke.f90 -o stoke.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  succ.f90 -o succ.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  swap.f90 -o swap.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  testeq.f90 -o testeq.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  triar.f90 -o triar.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c  trifnd.f90 -o trifnd.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o deldir.so acchk.o addpt.o adjchk.o binsrt.o circen.o cross.o delet.o delet1.o delout.o delseg.o dirout.o dirseg.o dldins.o init.o initad.o insrt.o insrt1.o intri.o locn.o master.o mnnd.o pred.o qtest.o qtest1.o stoke.o succ.o swap.o testeq.o triar.o trifnd.o -L/usr/local/opt/gcc/lib/gcc/current/gcc/x86_64-apple-darwin23/15 -L/usr/local/opt/gcc/lib/gcc/current/gcc -L/usr/local/opt/gcc/lib/gcc/current -lemutls_w -lheapt_w -lgfortran -lquadmath -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether clang++ -std=gnu++17 accepts -g... yes
+Using PKG_CONFIG: 
+Compiling against bundled copy of clipper library.
+checking for int64_t... yes
+     In the clipper library, signed 64-bit integers (cInt)
+     will be declared as 'int64_t'
+checking for uint64_t... yes
+     In the clipper library, unsigned 64-bit integers (cUInt)
+     will be declared as 'uint64_t'
+configure: creating ./config.status
+config.status: creating src/Makevars
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DPOLYCLIP_LONG64="int64_t" -DPOLYCLIP_ULONG64="uint64_t"  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DPOLYCLIP_LONG64="int64_t" -DPOLYCLIP_ULONG64="uint64_t"  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2   -c interface.cpp -o interface.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -DPOLYCLIP_LONG64="int64_t" -DPOLYCLIP_ULONG64="uint64_t"  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2   -c clipper.cpp -o clipper.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o polyclip.so init.o interface.o clipper.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c hbin.f -o hbin.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c hcell.f -o hcell.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c herode.f -o herode.o
+/usr/local/opt/gcc/bin/gfortran  -fPIC  -g -O2  -c hsm.f -o hsm.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c reg.c -o reg.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o hexbin.so hbin.o hcell.o herode.o hsm.o reg.o -L/usr/local/opt/gcc/lib/gcc/current/gcc/x86_64-apple-darwin23/15 -L/usr/local/opt/gcc/lib/gcc/current/gcc -L/usr/local/opt/gcc/lib/gcc/current -lemutls_w -lheapt_w -lgfortran -lquadmath -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c ANN.cpp -o ANN.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c KNN_ANN.cpp -o KNN_ANN.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c KNN_correlation_distance.cpp -o KNN_correlation_distance.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c KNN_cover_test.cpp -o KNN_cover_test.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c KNN_cover_tree.cpp -o KNN_cover_tree.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c KNN_mutual_information.cpp -o KNN_mutual_information.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c bd_fix_rad_search.cpp -o bd_fix_rad_search.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c bd_pr_search.cpp -o bd_pr_search.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c bd_search.cpp -o bd_search.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c bd_tree.cpp -o bd_tree.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c brute.cpp -o brute.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init_FNN.c -o init_FNN.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_dump.cpp -o kd_dump.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_fix_rad_search.cpp -o kd_fix_rad_search.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_pr_search.cpp -o kd_pr_search.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_search.cpp -o kd_search.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_split.cpp -o kd_split.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_tree.cpp -o kd_tree.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c kd_util.cpp -o kd_util.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c label_point.cpp -o label_point.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -Iinclude -DUSING_R -DUSING_RPRINT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c perf.cpp -o perf.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o FNN.so ANN.o KNN_ANN.o KNN_correlation_distance.o KNN_cover_test.o KNN_cover_tree.o KNN_mutual_information.o bd_fix_rad_search.o bd_pr_search.o bd_search.o bd_tree.o brute.o init_FNN.o kd_dump.o kd_fix_rad_search.o kd_pr_search.o kd_search.o kd_split.o kd_tree.o kd_util.o label_point.o perf.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+rm -f *.o core
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c RcppExports.cpp -o RcppExports.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c dictionary.cpp -o dictionary.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c parser.cpp -o parser.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c parsers/textparser.cc -o parsers/textparser.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c parsers/latexparser.cc -o parsers/latexparser.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c parsers/manparser.cc -o parsers/manparser.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c parsers/xmlparser.cc -o parsers/xmlparser.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c parsers/htmlparser.cc -o parsers/htmlparser.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/affentry.cc -o hunspell/affentry.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/affixmgr.cc -o hunspell/affixmgr.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/filemgr.cc -o hunspell/filemgr.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/hashmgr.cc -o hunspell/hashmgr.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/hunspell.cc -o hunspell/hunspell.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/hunzip.cc -o hunspell/hunzip.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/phonet.cc -o hunspell/phonet.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/replist.cc -o hunspell/replist.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/suggestmgr.cc -o hunspell/suggestmgr.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ihunspell -DBUILDING_LIBHUNSPELL -I'/usr/local/lib/R/4.5/site-library/Rcpp/include' -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -fvisibility=hidden -fPIC  -g -O2   -c hunspell/csutil.cc -o hunspell/csutil.o
+ar rcs hunspell/libstathunspell.a parsers/textparser.o parsers/latexparser.o parsers/manparser.o parsers/xmlparser.o parsers/htmlparser.o hunspell/affentry.o hunspell/affixmgr.o hunspell/filemgr.o hunspell/hashmgr.o hunspell/hunspell.o hunspell/hunzip.o hunspell/phonet.o hunspell/replist.o hunspell/suggestmgr.o hunspell/csutil.o
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o hunspell.so RcppExports.o dictionary.o parser.o -Lhunspell -lstathunspell -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c diff.c -o diff.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c diffobj.c -o diffobj.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o diffobj.so diff.o diffobj.o init.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c bit-ops.c -o bit-ops.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c cksum.c -o cksum.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o bitops.so bit-ops.o cksum.o init.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+checking for gcc... clang -std=gnu2x
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether clang -std=gnu2x accepts -g... yes
+checking for clang -std=gnu2x option to enable C11 features... -std=gnu11
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for string.h... (cached) yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for pkg-config... no
+configure: CAIRO_LIBS is unset, attempting to guess it.
+configure: CAIRO_CFLAGS=-I/usr/local/include/cairo
+checking if R was compiled with the RConn patch... no
+checking for cairo.h... yes
+checking for PNG support in Cairo... yes
+checking for ATS font support in Cairo... no
+configure: CAIRO_LIBS=-L/usr/local/lib -lcairo
+checking for library containing deflate... -lz
+checking whether Cairo programs can be compiled... yes
+checking for clang -std=gnu2x -std=gnu11 options needed to detect all undeclared functions... none needed
+checking whether cairo_image_surface_get_format is declared... no
+checking whether FreeType support is desired... auto
+checking for FreeType support in cairo... yes
+checking whether FreeType needs additional flags... yes
+checking whether fontconfig/freetype2 location can be guessed... possibly
+checking whether additional flags work... yes
+checking whether libjpeg works... yes
+checking whether Harfbuzz layout is desired... auto
+checking whether Harfbuzz + ICU works... no
+checking whether libtiff works... no
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating src/cconfig.h
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c cairobem.c -o cairobem.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c cairogd.c -o cairogd.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c cairotalk.c -o cairotalk.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c img-backend.c -o img-backend.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c img-jpeg.c -o img-jpeg.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c img-tiff.c -o img-tiff.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c pdf-backend.c -o pdf-backend.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c ps-backend.c -o ps-backend.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c svg-backend.c -o svg-backend.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c w32-backend.c -o w32-backend.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I/usr/local/include/cairo -I/usr/local/include -I/usr/local/include/freetype2   -I. -Iinclude  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include   -g -O2 -fPIC  -g -O2  -c xlib-backend.c -o xlib-backend.o
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o Cairo.so cairobem.o cairogd.o cairotalk.o img-backend.o img-jpeg.o img-tiff.o pdf-backend.o ps-backend.o svg-backend.o w32-backend.o xlib-backend.o -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -lz -L/usr/local/lib -lcairo -L/usr/local/lib -lfontconfig -lfreetype -lz -ljpeg -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+Compiling 'libfswatch' from source...
+Detecting 'cmake'...
+Required 'cmake' not found
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+configure: creating ./config.status
+config.status: creating src/Makefile
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile init.o mapclip.o mapget.o smooth.o thin.o 
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c mapclip.c -o mapclip.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c mapget.c -o mapget.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c smooth.c -o smooth.o
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG   -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c thin.c -o thin.o
+"/usr/local/Cellar/r/4.5.1/lib/R/bin/R" CMD SHLIB -o maps.so init.o mapclip.o mapget.o smooth.o thin.o 
+clang -std=gnu2x -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/usr/local/Cellar/r/4.5.1/lib/R/lib -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib -o maps.so init.o mapclip.o mapget.o smooth.o thin.o -L/usr/local/Cellar/r/4.5.1/lib/R/lib -lR
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile Gmake
+clang -std=gnu2x -g -O2  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib  Gmake.c   -o Gmake
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile Lmake
+clang -std=gnu2x -g -O2  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include -L/usr/local/opt/gettext/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/xz/lib -L/usr/local/lib  Lmake.c   -o Lmake
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile world2.line
+Converting world to world2
+awk -f ./convert.awk < world.line > world2.line
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile county.L state.L usa.L nz.L world.L world2.L italy.L france.L state.vbm.L state.carto.L lakes.L
+./Lmake 0 s b county.line county.linestats ../inst/mapdata/county.L
+./Lmake 0 s b state.line state.linestats ../inst/mapdata/state.L
+./Lmake 0 s b usa.line usa.linestats ../inst/mapdata/usa.L
+./Lmake 0 s b nz.line nz.linestats ../inst/mapdata/nz.L
+./Lmake 0 s b world.line world.linestats ../inst/mapdata/world.L
+./Lmake 0 s b world2.line world2.linestats ../inst/mapdata/world2.L
+./Lmake 0 s b italy.line italy.linestats ../inst/mapdata/italy.L
+./Lmake 0 s b france.line france.linestats ../inst/mapdata/france.L
+./Lmake 0 p b state.vbm.line state.vbm.linestats ../inst/mapdata/state.vbm.L
+./Lmake 0 p b state.carto.line state.carto.linestats ../inst/mapdata/state.carto.L
+./Lmake 0 s b lakes.line lakes.linestats ../inst/mapdata/lakes.L
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile county.G state.G usa.G nz.G world.G world2.G italy.G france.G state.vbm.G state.carto.G lakes.G
+./Gmake b county.gon county.gonstats ../inst/mapdata/county.G ../inst/mapdata/county.L
+./Gmake b state.gon state.gonstats ../inst/mapdata/state.G ../inst/mapdata/state.L
+./Gmake b usa.gon usa.gonstats ../inst/mapdata/usa.G ../inst/mapdata/usa.L
+./Gmake b nz.gon nz.gonstats ../inst/mapdata/nz.G ../inst/mapdata/nz.L
+./Gmake b world.gon world.gonstats ../inst/mapdata/world.G ../inst/mapdata/world.L
+./Gmake b world2.gon world2.gonstats ../inst/mapdata/world2.G ../inst/mapdata/world2.L
+./Gmake b italy.gon italy.gonstats ../inst/mapdata/italy.G ../inst/mapdata/italy.L
+./Gmake b france.gon france.gonstats ../inst/mapdata/france.G ../inst/mapdata/france.L
+./Gmake b state.vbm.gon state.vbm.gonstats ../inst/mapdata/state.vbm.G ../inst/mapdata/state.vbm.L
+./Gmake b state.carto.gon state.carto.gonstats ../inst/mapdata/state.carto.G ../inst/mapdata/state.carto.L
+./Gmake b lakes.gon lakes.gonstats ../inst/mapdata/lakes.G ../inst/mapdata/lakes.L
+make -f "/usr/local/Cellar/r/4.5.1/lib/R/etc/Makeconf" -f Makefile county.N state.N usa.N nz.N world.N world2.N italy.N france.N state.vbm.N state.carto.N lakes.N
+Trying to find libjson.h header file
+checking for gcc... clang -std=gnu2x
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether clang -std=gnu2x accepts -g... yes
+checking for clang -std=gnu2x option to enable C11 features... -std=gnu11
+USE_LOCAL = ""
+Minor Version: 6
+Using local libjson code. Copying files from src/libjson/Source
+/private/var/folders/hv/bpj1_97j5gb701wxbv899r7m0000gn/T/Rtmpqb26Je/R.INSTALL148a071689c97/RJSONIO
+JSONAllocator.cpp
+JSONChildren.cpp
+JSONDebug.cpp
+JSONIterators.cpp
+JSONMemory.cpp
+JSONNode.cpp
+JSONNode_Mutex.cpp
+JSONPreparse.cpp
+JSONStream.cpp
+JSONValidator.cpp
+JSONWorker.cpp
+JSONWriter.cpp
+internalJSONNode.cpp
+libjson.cpp
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating tools/cleanup
+clang -std=gnu2x -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2  -c ConvertUTF.c -o ConvertUTF.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONAllocator.cpp -o JSONAllocator.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONChildren.cpp -o JSONChildren.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONDebug.cpp -o JSONDebug.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONIterators.cpp -o JSONIterators.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONMemory.cpp -o JSONMemory.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONNode.cpp -o JSONNode.o
+clang++ -std=gnu++17 -I"/usr/local/Cellar/r/4.5.1/lib/R/include" -DNDEBUG -I. -Ilibjson -Ilibjson/Source -DNEW_JSON_NEW_STREAM -DNDEBUG=1  -DJSON_VALIDATE -DJSON_STREAM=1 -DJSON_READ_PRIORITY=1 -DJSON_LIBRARY=1 -DJSON_ISO_STRICT  -I/usr/local/opt/gettext/include -I/usr/local/opt/readline/include -I/usr/local/opt/xz/include -I/usr/local/include    -fPIC  -g -O2   -c JSONNode_Mutex.cpp -o JSONNode_Mutex.o

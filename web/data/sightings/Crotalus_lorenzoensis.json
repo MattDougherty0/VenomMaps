@@ -1,0 +1,38 @@
+[
+  {
+    "id": "occ_188937",
+    "sci": "Crotalus_lorenzoensis",
+    "ts": null,
+    "lat": 28.62937,
+    "lon": -112.81521,
+    "source": "HUMAN_OBSERVATION",
+    "photo": false,
+    "verified": true,
+    "source_kind": "human_observation",
+    "highlight": false
+  },
+  {
+    "id": "occ_298282",
+    "sci": "Crotalus_lorenzoensis",
+    "ts": null,
+    "lat": 28.64529,
+    "lon": -112.86279,
+    "source": "NA",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  },
+  {
+    "id": "occ_298284",
+    "sci": "Crotalus_lorenzoensis",
+    "ts": null,
+    "lat": 28.63107,
+    "lon": -112.81726,
+    "source": "NA",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "inat_12345",
+    "sci": "Agkistrodon_piscivorus",
+    "common": "Cottonmouth",
+    "ts": "2025-08-16T14:22:00Z",
+    "lat": 29.756,
+    "lon": -95.363,
+    "source": "iNaturalist",
+    "photo": true,
+    "verified": true,
+    "confidence": 0.92
+  },
+  {
+    "id": "user_abc",
+    "sci": "Crotalus_horridus",
+    "common": "Timber Rattlesnake",
+    "ts": "2025-08-12T01:10:00Z",
+    "lat": 39.875,
+    "lon": -77.232,
+    "source": "user",
+    "photo": true,
+    "verified": false,
+    "confidence": 0.65
+  }
+]
+
+

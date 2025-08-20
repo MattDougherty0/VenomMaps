@@ -1,0 +1,26 @@
+[
+  {
+    "id": "occ_120258",
+    "sci": "Crotalus_polisi",
+    "ts": null,
+    "lat": 28.97709,
+    "lon": -113.48423,
+    "source": "VenomMaps",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  },
+  {
+    "id": "occ_312772",
+    "sci": "Crotalus_polisi",
+    "ts": null,
+    "lat": 28.9707,
+    "lon": -113.4787,
+    "source": "NA",
+    "photo": false,
+    "verified": false,
+    "source_kind": "other",
+    "highlight": false
+  }
+]

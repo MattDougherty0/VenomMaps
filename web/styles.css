@@ -1,0 +1,68 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --muted: #94a3b8;
+  --text: #e5e7eb;
+  --accent: #22d3ee;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; }
+
+.topbar {
+  display: flex; gap: 12px; align-items: center;
+  padding: 10px 12px; border-bottom: 1px solid var(--border); background: #0b1220; position: sticky; top: 0; z-index: 1000;
+}
+.brand { font-weight: 700; letter-spacing: .3px; }
+.search {
+  flex: 1; max-width: 520px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
+  background: #0b1220; color: var(--text); outline: none;
+}
+.search::placeholder { color: #4b5563; }
+
+.layout { display: grid; grid-template-columns: 320px 1fr; height: calc(100vh - 48px); }
+.sidebar {
+  border-right: 1px solid var(--border); background: var(--panel); overflow: auto; padding: 10px;
+}
+.section-title { font-size: 13px; color: var(--muted); margin: 6px 2px 8px; text-transform: uppercase; letter-spacing: .06em; }
+
+.results { list-style: none; margin: 0; padding: 0; }
+.results li {
+  padding: 10px 10px; border-radius: 10px; margin: 6px 0; cursor: pointer;
+  border: 1px solid var(--border); background: #0c1626;
+}
+.results li:hover { border-color: var(--accent); }
+.results .sci { color: var(--muted); font-style: italic; margin-left: 6px; }
+
+.hint { color: var(--muted); margin: 14px 4px; font-size: 13px; }
+
+#map { height: 100%; width: 100%; }
+
+.leaflet-tooltip { background: rgba(12,22,38,.95); color: #e5e7eb; border: 1px solid #1f2937; }
+.leaflet-container a { color: #93c5fd; }
+
+/* Nearby styles */
+.results.nearby li { background: #0e1a2b; }
+.results.nearby li .badge { font-size: 11px; color: var(--muted); margin-left: 6px; }
+
+.results li.selected { border-color: var(--accent); background: #0f2441; }
+.results li .swatch { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:middle; }
+.clear-btn {
+  background: transparent; border: 1px solid var(--border); color: var(--text);
+  padding: 4px 8px; border-radius: 8px; cursor: pointer;
+}
+.clear-btn:hover { border-color: var(--accent); }
+.selected-list li { display:flex; align-items:center; justify-content:space-between; }
+.selected-list li .rm { font-size: 12px; color: var(--muted); cursor: pointer; }
+.selected-list li .rm:hover { color: var(--accent); }
+
+/* chips for sightings recency */
+.chips { display:flex; gap:8px; flex-wrap:wrap; margin: 6px 2px 12px; }
+.chip {
+  background:#0c1626; border:1px solid var(--border); color:var(--text);
+  padding:6px 10px; border-radius:12px; cursor:pointer;
+}
+.chip:hover { border-color: var(--accent); }
+
+
