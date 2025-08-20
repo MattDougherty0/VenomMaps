@@ -336,14 +336,14 @@ function highlightSelectedInLists() {
 }
 
 export function attachSelectedPanel() {
-  const ul = document.getElementById('selected');
+  const ul = document.getElementById('legend');
   const btn = document.getElementById('clear-selected');
   if (btn) btn.onclick = clearSelection;
   renderSelectedPanel();
 }
 
 function renderSelectedPanel() {
-  const ul = document.getElementById('selected');
+  const ul = document.getElementById('legend');
   if (!ul) return;
   ul.innerHTML = '';
   for (const sci of selected) {
