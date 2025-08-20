@@ -7,6 +7,7 @@ const geoCache = new Map();    // sci -> GeoJSON
 let overlapLayer = null;       // Leaflet layer for intersection
 let allRangesGroup = null;     // Group for all ranges when nothing selected
 let deferRanges = true;        // Defer drawing ranges while panning
+let hasSelection = false;      // Track whether species are selected
 
 export async function initMap() {
   // Prefer canvas for better performance with many vectors
@@ -16,8 +17,8 @@ export async function initMap() {
               { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
   allRangesGroup = L.layerGroup().addTo(map);
   // Hide ranges during move for responsiveness when deferring is enabled
-  map.on('movestart', () => { if (deferRanges) clearAllRanges(); });
-  map.on('moveend', () => { if (deferRanges) renderAllRanges(); });
+  map.on('movestart', () => { if (deferRanges && !hasSelection) clearAllRanges(); });
+  map.on('moveend', () => { if (deferRanges && !hasSelection) renderAllRanges(); });
 }
 
 export function getViewBounds() {
@@ -29,6 +30,7 @@ export function getMap() { return map; }
 
 // Public: update rendered map to match selection array
 export async function setSelection(selection) {
+  hasSelection = Array.isArray(selection) && selection.length > 0;
   // If nothing is selected, show faint ranges for all species in species list
   if (!selection || selection.length === 0) {
     await renderAllRanges();
@@ -94,6 +96,7 @@ async function renderAllRanges(){
         }
       }).addTo(allRangesGroup);
     }
+    if (allRangesGroup && map.hasLayer(allRangesGroup)) allRangesGroup.bringToBack();
   } catch {}
 }
 
