@@ -6,6 +6,7 @@ const layers = new Map();      // sci -> Leaflet layer
 const geoCache = new Map();    // sci -> GeoJSON
 let overlapLayer = null;       // Leaflet layer for intersection
 let allRangesGroup = null;     // Group for all ranges when nothing selected
+let deferRanges = true;        // Defer drawing ranges while panning
 
 export async function initMap() {
   // Prefer canvas for better performance with many vectors
@@ -14,6 +15,9 @@ export async function initMap() {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
               { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
   allRangesGroup = L.layerGroup().addTo(map);
+  // Hide ranges during move for responsiveness when deferring is enabled
+  map.on('movestart', () => { if (deferRanges) clearAllRanges(); });
+  map.on('moveend', () => { if (deferRanges) renderAllRanges(); });
 }
 
 export function getViewBounds() {
@@ -91,6 +95,14 @@ async function renderAllRanges(){
       }).addTo(allRangesGroup);
     }
   } catch {}
+}
+
+export function setDeferRanges(v) {
+  deferRanges = !!v;
+  if (!deferRanges) {
+    // Immediately redraw if we stop deferring
+    renderAllRanges();
+  }
 }
 
 async function loadGeoJSON(sci) {
