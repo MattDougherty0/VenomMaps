@@ -362,11 +362,12 @@ function renderSelectedPanel() {
   ul.innerHTML = '';
   for (const sci of selected) {
     const e = COMMON_BY_SCI[sci] || { sci, common: sciPretty(sci) };
+    const label = labelOf(sci);
     const li = document.createElement('li');
     li.innerHTML = `
       <div>
         <span class=\"swatch\" style=\"background:${colorFor(sci)};\"></span>
-        <span class=\"common\">${e.common || sciPretty(sci)}</span>
+        <span class=\"common\">${label.split(' (')[0]}</span>
         <span class=\"sci\">(${sciPretty(sci)})</span>
       </div>
       <span class=\"rm\" title=\"Remove\">✕</span>
